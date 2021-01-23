@@ -9,7 +9,7 @@ const images = [
     }
 ];
 
-
+//コンポーネント作成
 Vue.component('alert-box', {
     template: `
     <div class = "alert">
@@ -19,6 +19,7 @@ Vue.component('alert-box', {
     `
 });
 
+//コンポーネント作成
 Vue.component('back-img', {
     template: `
     <div class = "Word">
@@ -26,6 +27,7 @@ Vue.component('back-img', {
     </div>
     `
 });
+
 
 const app = new Vue({
     el: "#app",
