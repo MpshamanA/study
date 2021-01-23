@@ -28,7 +28,7 @@ Vue.component('back-img', {
     `
 });
 
-
+//Vueのインスタンスを作成しPhotosにImagesを代入
 const app = new Vue({
     el: "#app",
       data: {
