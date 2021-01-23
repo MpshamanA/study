@@ -1,0 +1,20 @@
+.alert{
+    background-color: #fcc;
+    padding: 10px;
+    border: 1px solid #f33;
+}
+
+.Word{
+    background-image: url(img/Countryside.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: right bottom;
+    background-size: cover;
+}
+.Word h3{
+    text-align: center;
+    color: white;
+    margin: 0;
+    padding: 60px;
+    background: linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.6));
+}
