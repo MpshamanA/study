@@ -1,40 +1,29 @@
-const images = [
-    {
-        "path": "img/Countryside.jpg",
-        "caption": "ITで地方に貢献したいです"
-    },
-    {
-        "path": "img/Countryside.jpg",
-        "caption": "ITで地方に貢献したいです"
+var items = [{
+  name: '鉛筆', price: 300, quantity: 0
+}, {
+  name: 'ノート', price: 400, quantity: 0
+}, {
+  name: '消しゴム', price: 500, quantity: 0
+}]
+var vm = new Vue({
+  el: '#app',
+  data: { // dataプロパティ
+    items: items
+  },
+  filters: { // この節で追加したフィルタの定義 
+    numberWithDelimiter: function (value) {
+      if (!value) {
+        return '0'
+      }
+      return value.toString().replace(/(\d)(?=(\d{3})+$)/g, '$1,')
     }
-];
-
-//コンポーネント作成
-Vue.component('alert-box', {
-    template: `
-    <div class = "alert">
-        <strong>Error!</strong>
-        <slot></slot>
-    </div>
-    `
+  }
 });
 
-//コンポーネント作成
-Vue.component('back-img', {
-    template: `
-    <div class = "Word">
-        <slot></slot>
-    </div>
-    `
+var app = new Vue({
+  el: '#b-button',
+  data: {
+    loggedInButton: 'ログイン済のため購入できます'
+  }
 });
-
-//Vueのインスタンスを作成しPhotosにImagesを代入
-const app = new Vue({
-    el: "#app",
-      data: {
-        Photos: []
-    },
-    created: function () {
-        this.Photos = images;
-    }
-});
+    // JSFiddleでコンソールからvmにアクセスするための対応 window.vm = vm
