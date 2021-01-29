@@ -10,10 +10,13 @@
 <body>
     <script src="https://unpkg.com/vue@2.5.17"></script>
     <div id="app">
-        <p>{{ items[0].name }}</p>
         <p>{{ items[0].name }}: {{ items[0].price }} x {{ items[0].quantity }}</p>
-       <p>フィルタ処理例 {{3333244| numberWithDelimiter}}</p> 
-      </div>
+       <p>小計: {{ totalPrice | numberWithDelimiter }}円</p> <p>合計(税込): {{ totalPriceWithTax | numberWithDelimiter }}円</p> 
+       <!-- 属性値に応じて、表示を出し分けする -->
+       <p v-show="!canBuy">
+        {{ 1000 | numberWithDelimiter }}円以上からご購入いただけます
+       </p>
+       </div>
       <button id="b-button" v-bind:title="loggedInButton">購入</button>        
       <script type="text/javascript" src="app.js"></script>
 </body>
